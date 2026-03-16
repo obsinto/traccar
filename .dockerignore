@@ -1,0 +1,41 @@
+# Git
+.git
+.gitignore
+.gitmodules
+.github
+
+# Build artifacts
+target/
+build/
+*.jar
+*.zip
+*.run
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Gradle
+.gradle/
+
+# Node (keep traccar-web source, exclude artifacts)
+**/node_modules/
+traccar-web/build/
+
+# Docker
+docker/
+Dockerfile*
+docker-compose*.yaml
+coolify/
+
+# Documentation
+*.md
+LICENSE.txt
+openapi.yaml
+
+# Debug/Setup files
+debug.xml
+setup/
+tools/
+override/
