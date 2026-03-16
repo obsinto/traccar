@@ -19,9 +19,9 @@ build/
 # Gradle
 .gradle/
 
-# Node (keep traccar-web source, exclude artifacts)
+# Node / Frontend (cloned during build)
 **/node_modules/
-traccar-web/build/
+traccar-web/
 
 # Docker
 docker/

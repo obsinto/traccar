@@ -10,10 +10,12 @@ RUN gradle assemble --no-daemon
 
 # Stage 2: Build frontend (React)
 FROM node:22-alpine AS frontend-builder
+RUN apk add --no-cache git
 WORKDIR /app
-COPY traccar-web/package*.json ./
+ARG TRACCAR_WEB_REPO=https://github.com/obsinto/traccar-web.git
+ARG TRACCAR_WEB_BRANCH=master
+RUN git clone --depth 1 --branch ${TRACCAR_WEB_BRANCH} ${TRACCAR_WEB_REPO} .
 RUN npm ci
-COPY traccar-web/ ./
 RUN npm run build
 
 # Stage 3: Create package
